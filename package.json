@@ -1,0 +1,19 @@
+{
+  "name": "react-qiniu-pr",
+  "version": "1.0.0",
+  "description": "To create pr with react-qiniu",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maybeShuo/react-qiniu-pr.git"
+  },
+  "author": "maybeShuo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/maybeShuo/react-qiniu-pr/issues"
+  },
+  "homepage": "https://github.com/maybeShuo/react-qiniu-pr#readme"
+}
