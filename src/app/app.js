@@ -40,6 +40,7 @@ export default class App extends Component {
         console.log('Received files: ', files);
     }
 
+    //event handler to upload files to qiniu
     handleUploadToQiniu()
     {
         const files = this.state.files;
@@ -52,7 +53,7 @@ export default class App extends Component {
     {
         return (
           <div>
-            <ReactQiniu autoUpload={this.state.autoUpload} onDrop={this.onDrop} size={150} token={this.state.token} onUpload={this.onUpload}>
+            <ReactQiniu autoUpload={this.state.autoUpload} onDrop={this.onDrop} maxSize={"500K"} token={this.state.token} onUpload={this.onUpload}>
               <div>Try dropping some files here, or click to select files to upload.</div>
             </ReactQiniu>
             <button onClick={this.handleUploadToQiniu}>Upload</button>
