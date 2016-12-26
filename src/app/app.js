@@ -40,6 +40,7 @@ export default class App extends Component {
         console.log('Received files: ', files);
     }
 
+    //event handler to upload files to qiniu
     handleUploadToQiniu()
     {
         const files = this.state.files;
