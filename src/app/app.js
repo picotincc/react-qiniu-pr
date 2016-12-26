@@ -12,17 +12,8 @@ export default class App extends Component {
 
     state = {
         files: [],
-        token: 'FZ6CCJAqIIoKRp4ygVT8Mu3qzNxARTdtvhWUn-JA:-IFOKzdExR_g2LNy4_Rkp0XgVMU=:eyJzY29wZSI6ImNjLXFpbml1IiwiZGVhZGxpbmUiOjE0ODI1NDc4ODZ9',
-        uploadKey: '', //Optional
-        autoUpload: false, //Optional
-    }
-
-    componentDidMount()
-    {
-        const uploadKey = "CC_" + Date.now();
-        this.setState({
-            uploadKey
-        });
+        token: 'FZ6CCJAqIIoKRp4ygVT8Mu3qzNxARTdtvhWUn-JA:1FKa0oZg53YRgEKD5VZOUM64hcU=:eyJzY29wZSI6ImNjLXFpbml1IiwiZGVhZGxpbmUiOjE0ODI3NTk3Mjd9',
+        autoUpload: false, //Optional, if you don't want to upload to Qiniu, you can set the value false
     }
 
     onUpload(files)
@@ -37,9 +28,7 @@ export default class App extends Component {
 
     onDrop(files)
     {
-        const uploadKey = "CC_" + Date.now();
         this.setState({
-            uploadKey,
             files: files
         });
         // files is a FileList(https://developer.mozilla.org/en/docs/Web/API/FileList) Object
@@ -63,7 +52,7 @@ export default class App extends Component {
     {
         return (
           <div>
-            <ReactQiniu autoUpload={this.state.autoUpload} onDrop={this.onDrop} size={150} token={this.state.token} uploadKey={this.state.uploadKey} onUpload={this.onUpload}>
+            <ReactQiniu autoUpload={this.state.autoUpload} onDrop={this.onDrop} size={150} token={this.state.token} onUpload={this.onUpload}>
               <div>Try dropping some files here, or click to select files to upload.</div>
             </ReactQiniu>
             <button onClick={this.handleUploadToQiniu}>Upload</button>
